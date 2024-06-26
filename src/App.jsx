@@ -63,7 +63,7 @@ function App() {
             </div>
             <div className="Container">
                 <Counter onClick={incrementTotal} />
-                <CounterWithDay onClick={incrementTotal} />
+                { CounterWithDay({onClick: incrementTotal}) }
                 <Counter onClick={incrementTotal} />
             </div>
         </div>
