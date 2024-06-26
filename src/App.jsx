@@ -19,6 +19,42 @@ function App() {
 
     }
 
+    const CounterWithDay = props => {
+        let today;
+        switch (new Date().getDay()) {
+            case 0:
+                today = "Sunday";
+                break;
+            case 1:
+                today = "Monday";
+                break;
+            case 2:
+                today = "Tuesday";
+                break;
+            case 3:
+                today = "Wednesday";
+                break;
+            case 4:
+                today = "Thursday";
+                break;
+            case 5:
+                today = "Friday";
+                break;
+
+            default:
+                today = "Shabes";
+                break;
+        }
+
+        return (
+            <div>
+                <Counter {...props} />
+                <br />
+                <span>Today is {today}</span>
+            </div>
+        );
+    };
+
     return (
         <div className="App">
             <div>
@@ -27,7 +63,7 @@ function App() {
             </div>
             <div className="Container">
                 <Counter onClick={incrementTotal} />
-                <Counter onClick={incrementTotal} />
+                <CounterWithDay onClick={incrementTotal} />
                 <Counter onClick={incrementTotal} />
             </div>
         </div>
